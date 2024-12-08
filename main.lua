@@ -10,11 +10,15 @@ function love.load()
 
     txts = cards.LoadCards()
     Deck = cards.NewFullDeck()
-    table.insert(Table, cards.NewCard(1))
+    table.insert(Table, cards.NewCard(cards.GetCardFromDeck(Deck)))
 end
 
 function love.update(dt)
     cards.MoveCards(Table, txts, Scale)
+end
+
+function love.keypressed(key)
+    cards.Input(Table, key)
 end
 
 function love.draw()

@@ -1,5 +1,3 @@
-local ease = require("ease")
-
 local cards = {}
 
 function CheckCollision(x1,y1,w1,h1, x2,y2,w2,h2)
@@ -30,9 +28,66 @@ function cards.NewCard(CardFromDeck)
     return {cardid = CardFromDeck, x = 0, y = 0, inhand = false}
 end
 
+function cards.ShuffleDeck(Deck, Times)
+    
+end
+
 function cards.DrawCards(Cards, CardsTx, Scale)
     for key, value in pairs(Cards) do
         if value.cardid == 1 then love.graphics.draw(CardsTx.c2, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 2 then love.graphics.draw(CardsTx.s2, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 3 then love.graphics.draw(CardsTx.d2, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 4 then love.graphics.draw(CardsTx.h2, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 5 then love.graphics.draw(CardsTx.c3, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 6 then love.graphics.draw(CardsTx.s3, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 7 then love.graphics.draw(CardsTx.d3, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 8 then love.graphics.draw(CardsTx.h3, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 9 then love.graphics.draw(CardsTx.c4, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 10 then love.graphics.draw(CardsTx.s4, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 11 then love.graphics.draw(CardsTx.d4, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 12 then love.graphics.draw(CardsTx.h4, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 13 then love.graphics.draw(CardsTx.c5, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 14 then love.graphics.draw(CardsTx.s5, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 15 then love.graphics.draw(CardsTx.d5, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 16 then love.graphics.draw(CardsTx.h5, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 17 then love.graphics.draw(CardsTx.c6, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 18 then love.graphics.draw(CardsTx.s6, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 19 then love.graphics.draw(CardsTx.d6, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 20 then love.graphics.draw(CardsTx.h6, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 21 then love.graphics.draw(CardsTx.c7, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 22 then love.graphics.draw(CardsTx.s7, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 23 then love.graphics.draw(CardsTx.d7, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 24 then love.graphics.draw(CardsTx.h7, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 25 then love.graphics.draw(CardsTx.c8, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 26 then love.graphics.draw(CardsTx.s8, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 27 then love.graphics.draw(CardsTx.d8, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 28 then love.graphics.draw(CardsTx.h8, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 29 then love.graphics.draw(CardsTx.c9, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 30 then love.graphics.draw(CardsTx.s9, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 31 then love.graphics.draw(CardsTx.d9, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 32 then love.graphics.draw(CardsTx.h9, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 33 then love.graphics.draw(CardsTx.c10, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 34 then love.graphics.draw(CardsTx.s10, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 35 then love.graphics.draw(CardsTx.d10, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 36 then love.graphics.draw(CardsTx.h10, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 37 then love.graphics.draw(CardsTx.cj, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 38 then love.graphics.draw(CardsTx.sj, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 39 then love.graphics.draw(CardsTx.dj, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 40 then love.graphics.draw(CardsTx.hj, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 41 then love.graphics.draw(CardsTx.cq, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 42 then love.graphics.draw(CardsTx.sq, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 43 then love.graphics.draw(CardsTx.dq, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 44 then love.graphics.draw(CardsTx.hq, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 45 then love.graphics.draw(CardsTx.ck, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 46 then love.graphics.draw(CardsTx.sk, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 47 then love.graphics.draw(CardsTx.dk, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 48 then love.graphics.draw(CardsTx.hk, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 49 then love.graphics.draw(CardsTx.ca, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 50 then love.graphics.draw(CardsTx.sa, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 51 then love.graphics.draw(CardsTx.da, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 52 then love.graphics.draw(CardsTx.ha, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 53 then love.graphics.draw(CardsTx.jjb, value.x, value.y, 0, Scale, Scale) end
+        if value.cardid == 54 then love.graphics.draw(CardsTx.jjr, value.x, value.y, 0, Scale, Scale) end
     end
 end
 
@@ -43,13 +98,9 @@ function cards.MoveCards(Cards, CardsTx, Scale)
 
     local mx, my = love.mouse.getPosition()
 
-    for key, value in pairs(Cards) do
-        if value.inhand == true then
-            if love.mouse.isDown(1) then value.inhand = false end
-        else
-            if CheckCollision(mx, my, 1, 1, value.x, value.y, width, height) and love.mouse.isDown(1) then
-                value.inhand = true
-            end
+    for k, value in pairs(Cards) do
+        if CheckCollision(mx, my, 1, 1, value.x, value.y, width, height) and love.mouse.isDown(1) then
+            value.inhand = true
         end
     end
 
@@ -61,8 +112,15 @@ function cards.MoveCards(Cards, CardsTx, Scale)
     end
 end
 
+function cards.Input(Cards, key)
+    for k, value in pairs(Cards) do
+        if key == "escape" or key == "space" then value.inhand = false end
+    end
+end
+
 function cards.LoadCards()
     local CardsTx = {
+        back = love.graphics.newImage("cards_txt/back.png"),
         c2 = love.graphics.newImage("cards_txt/2c.png"),
         s2 = love.graphics.newImage("cards_txt/2s.png"),
         d2 = love.graphics.newImage("cards_txt/2d.png"),
