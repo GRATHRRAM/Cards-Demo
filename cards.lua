@@ -123,15 +123,16 @@ function cards.MoveCards(Cards, CardsTx, Scale)
     end
 end
 
-function cards.UpdateDeck(Deck, Table, CardsTx, Scale)
+function cards.UpdateDeck(Deck, Table, CardsTx, Scale, timer, rtimer)
      local width, height = CardsTx.s2:getDimensions()
     width  = math.floor(width * Scale + 0.5)
     height = math.floor(height * Scale + 0.5)
 
     local mx, my = love.mouse.getPosition()
 
-    if CheckCollision(mx, my, 1, 1, Deck.x, Deck.y, width, height) and love.mouse.isDown(1) then
+    if CheckCollision(mx, my, 1, 1, Deck.x, Deck.y, width, height) and love.mouse.isDown(1) and timer < 0 then
         table.insert(Table, cards.NewCard(cards.GetCardFromDeck(Deck)))
+        timer = rtimer
     end
 end
 

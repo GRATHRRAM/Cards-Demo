@@ -17,7 +17,7 @@ end
 
 function love.update(dt)
     cards.MoveCards(Table, txts, Scale)
-    cards.UpdateDeck(Deck, Table, txts, Scale, GPET)
+    cards.UpdateDeck(Deck, Table, txts, Scale, GPET, RestoreGPET)
 
     GPET = GPET - dt
 end
