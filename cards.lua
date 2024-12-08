@@ -19,13 +19,17 @@ function cards.NewFullDeck()
 end
 
 function cards.GetCardFromDeck(Deck)
-    if Deck == nil then print("Deck == nil") return end
-    return table.remove(Deck,1)
+    if Deck.Deck == nil then print("Deck == nil") return end
+    return table.remove(Deck.Deck,1)
+end
+
+function cards.GetNewDeck()
+    return {Deck = cards.NewFullDeck(), x = 0 , y = 0}
 end
 
 function cards.NewCard(CardFromDeck)
     local xx, yy = love.mouse.getPosition()
-    return {cardid = CardFromDeck, x = 0, y = 0, inhand = false}
+    return {cardid = CardFromDeck, x = xx, y = yy, inhand = false}
 end
 
 function cards.ShuffleDeck(Deck, Times)
@@ -98,9 +102,16 @@ function cards.MoveCards(Cards, CardsTx, Scale)
 
     local mx, my = love.mouse.getPosition()
 
+    local anyinhand = false
     for k, value in pairs(Cards) do
-        if CheckCollision(mx, my, 1, 1, value.x, value.y, width, height) and love.mouse.isDown(1) then
-            value.inhand = true
+        if value.inhand == true then anyinhand = true break end
+    end
+
+    if not anyinhand then
+        for k, value in pairs(Cards) do
+            if CheckCollision(mx, my, 1, 1, value.x, value.y, width, height) and love.mouse.isDown(1) then
+                value.inhand = true
+            end
         end
     end
 
@@ -109,6 +120,18 @@ function cards.MoveCards(Cards, CardsTx, Scale)
             value.x = Quadin(value.x, mx - width / 2, 0.3)
             value.y = Quadin(value.y, my - height / 2, 0.3)
         end
+    end
+end
+
+function cards.UpdateDeck(Deck, Table, CardsTx, Scale)
+     local width, height = CardsTx.s2:getDimensions()
+    width  = math.floor(width * Scale + 0.5)
+    height = math.floor(height * Scale + 0.5)
+
+    local mx, my = love.mouse.getPosition()
+
+    if CheckCollision(mx, my, 1, 1, Deck.x, Deck.y, width, height) and love.mouse.isDown(1) then
+        table.insert(Table, cards.NewCard(cards.GetCardFromDeck(Deck)))
     end
 end
 
